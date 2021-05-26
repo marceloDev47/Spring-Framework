@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  	<bean id="mundo" class="com.marcelodev.beans.Mundo">
+  		<property name="saludo" value="hola mundo"></property>
+  	</bean>
+  	
+  	<bean id="animal" class="com.marcelodev.beans.Animal">
+  		<constructor-arg type="int" value="1"></constructor-arg>
+  		<!--  <constructor-arg value="perro"></constructor-arg> -->
+  		
+  		<!-- Se puede modificar el orden a mostrar con el index -->
+  		<!-- 
+  			<constructor-arg index="0" value="1"></constructor-arg>
+  			<constructor-arg index="2" value="blanco"></constructor-arg>
+  			<constructor-arg index="1" value="perro"></constructor-arg>
+  		-->
+  	</bean>
+  	
+  	<bean id="persona" class="com.marcelodev.beans.Persona">
+  		<property name="id" value="1"></property>
+  		<property name="nombre" value="Carlos"></property>
+  		<property name="pais" ref="pais"></property>
+  	</bean>
+  	
+  	<bean id="pais" class="com.marcelodev.beans.Pais">
+  		<property name="nombre" value="Argentina"></property>
+  	</bean>
+
+</beans>
