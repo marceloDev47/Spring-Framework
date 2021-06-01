@@ -1,33 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  	<bean id="mundo" class="com.marcelodev.beans.Mundo">
-  		<property name="saludo" value="hola mundo"></property>
-  	</bean>
-  	
-  	<bean id="animal" class="com.marcelodev.beans.Animal">
-  		<constructor-arg type="int" value="1"></constructor-arg>
-  		<!--  <constructor-arg value="perro"></constructor-arg> -->
-  		
-  		<!-- Se puede modificar el orden a mostrar con el index -->
-  		<!-- 
-  			<constructor-arg index="0" value="1"></constructor-arg>
-  			<constructor-arg index="2" value="blanco"></constructor-arg>
-  			<constructor-arg index="1" value="perro"></constructor-arg>
-  		-->
-  	</bean>
-  	
-  	<bean id="persona" class="com.marcelodev.beans.Persona">
-  		<property name="id" value="1"></property>
-  		<property name="nombre" value="Carlos"></property>
-  		<property name="pais" ref="pais"></property>
-  	</bean>
-  	
-  	<bean id="pais" class="com.marcelodev.beans.Pais">
-  		<property name="nombre" value="Argentina"></property>
-  	</bean>
+	<bean id="mundo" class="com.marcelodev.beans.Mundo">
+		<property name="saludo" value="hola mundo"></property>
+	</bean>
+
+	<bean id="animal" class="com.marcelodev.beans.Animal">
+		<constructor-arg type="int" value="1"></constructor-arg>
+		<!-- <constructor-arg value="perro"></constructor-arg> -->
+
+		<!-- Se puede modificar el orden a mostrar con el index -->
+		<!-- <constructor-arg index="0" value="1"></constructor-arg> <constructor-arg 
+			index="2" value="blanco"></constructor-arg> <constructor-arg index="1" value="perro"></constructor-arg> -->
+	</bean>
+
+	<bean id="persona" class="com.marcelodev.beans.Persona">
+		<property name="idPersona" value="1"></property>
+		<property name="nombre" value="Carlos"></property>
+		<property name="pais" ref="pais"></property>
+	</bean>
+
+	<bean id="pais" class="com.marcelodev.beans.Pais">
+		<property name="id" value="1"></property>
+		<property name="nombre" value="Argentina"></property>
+		<!--   <property name="ciudad" ref="ciudad"></property> Ahora ciudad tiene que ser una lista, se mapea de la siguiente forma -->
+		<property name="ciudades">
+		<list>
+			<ref bean="ciudad1"></ref>
+			<ref bean="ciudad2"></ref>
+			<ref bean="ciudad3"></ref>
+		</list>			
+		</property>
+	</bean>
+
+	<bean id="ciudad" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Rosario"></property>
+	</bean>
+	
+	<bean id="ciudad1" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Rosario"></property>
+	</bean>
+	<bean id="ciudad2" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Ciudad de Santa Fe"></property>
+	</bean>
+	<bean id="ciudad3" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Rafaela"></property>
+	</bean>
 
 </beans>

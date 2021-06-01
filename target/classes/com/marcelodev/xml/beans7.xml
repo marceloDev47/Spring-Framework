@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:context="http://www.springframework.org/schema/context" 
+          xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	
+	<!-- Uso de Estereotipos -->
+	<!-- Para escanear todo el paquete de beans nos apoyamos en tag context:component-scan -->
+	
+	<context:component-scan base-package="com.marcelodev"></context:component-scan>
+	
+	<!-- ya no necesitaríamos definir los beans con el tag <bean> en archivo de config xml
+	<bean id="messi" class="com.marcelodev.beans.Jugador">
+		<property name="numero" value="10"></property>
+		<property name="nombre" value="Lionel Messi"></property>
+		 <property name="equipo" ref="barcelona"></property>
+	</bean>
+	Si corremos la app nos saldrá un error de que no existe el bean messi si no le cambiamos su valor por jugador, ya que escaneará por su nombre de clase
+	-->
+	
+	<bean id="barcelona" class="com.marcelodev.beans.Barcelona">
+		<qualifier value="barcelonaQualifier"></qualifier>
+	</bean>
+	<bean id="juventus" class="com.marcelodev.beans.Juventus">
+		<qualifier value="juventusQualifier"></qualifier>
+	</bean>
+
+</beans>

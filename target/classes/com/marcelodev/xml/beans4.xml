@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Para poder utilizar anotaciones por ej @PostConstruct o @PreDestroy 
+		es necesario incluir aquí la siguiente líena de código -->
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean> -->
+
+	<!-- Ambitos Singleton y Prototype Ciclo de vida de los beans - init-method 
+		y destroy-method -->
+	<bean id="persona" class="com.marcelodev.beans.Persona"
+		autowire="byName" scope="singleton" init-method="init"
+		destroy-method="destroy">
+		<property name="idPersona" value="1"></property>
+		<property name="nombre" value="Carlos"></property>
+
+	</bean>
+
+	<bean id="pais" class="com.marcelodev.beans.Pais">
+		<property name="nombre" value="Argentina"></property>
+	</bean>
+
+	<bean id="ciudad" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Rosario"></property>
+	</bean>
+
+
+</beans>

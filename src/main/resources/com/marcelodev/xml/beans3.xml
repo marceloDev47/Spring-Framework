@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		"byName" hará la inyección o referencia automática de los beans por nombre 
+		id='' que le indiquemos. 
+		"byType" lo mismo solo que lo hace por tipo de objeto, 
+		hay que tener cuidado con el uso de este, porque si tenemos mas de un bean 
+		del mismo tipo habrá conflictos 
+	-->
+	<bean id="persona" class="com.marcelodev.beans.Persona"
+		autowire="byName">
+		<property name="idPersona" value="1"></property>
+		<property name="nombre" value="Carlos"></property>
+
+	</bean>
+
+	<bean id="pais" class="com.marcelodev.beans.Pais">
+		<property name="nombre" value="Argentina"></property>
+	</bean>
+
+	<bean id="ciudad" class="com.marcelodev.beans.Ciudad">
+		<property name="nombre" value="Rosario"></property>
+	</bean>
+
+
+</beans>
