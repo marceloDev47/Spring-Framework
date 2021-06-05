@@ -8,7 +8,7 @@ import com.marcelodev.beans.Persona;
 public class App4 {
 
   public static void main(String[] args) {
-    // Uso de Autowired para beans por config xml
+
     ApplicationContext appContext =
         new ClassPathXmlApplicationContext("com/marcelodev/xml/beans4.xml");
 
@@ -16,8 +16,8 @@ public class App4 {
     Persona per2 = (Persona) appContext.getBean("persona");
 
     // Descomentar línea para probar instancia nueva cuando el ámbito es Prototype
-    // per.setIdPersona(5);
-    // per.setNombre("Jorge");
+    per.setIdPersona(5);
+    per.setNombre("Jorge");
 
     System.out.println(per.getIdPersona() + " " + per.getNombre() + " " + per.getPais().getNombre()
         + " " + per.getCiudad().getNombre());

@@ -8,6 +8,7 @@
 
 	<!-- Para el uso de anotaciones bean post procesors: autowire, qualifier -->
 	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean> -->
+	
 	<context:annotation-config />
 
 	<bean id="messi" class="com.marcelodev.beans.Jugador">

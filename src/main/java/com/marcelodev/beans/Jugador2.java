@@ -2,6 +2,7 @@ package com.marcelodev.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import com.marcelodev.interfaces.IEquipo;
 
@@ -11,6 +12,8 @@ import com.marcelodev.interfaces.IEquipo;
 @Component("messi")
 public class Jugador2 {
   private int numero;
+
+  @Value("Lio Messi")
   private String nombre;
   // Uso de Autowired mediante anotaciones
   @Autowired

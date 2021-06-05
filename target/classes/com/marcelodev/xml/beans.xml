@@ -13,8 +13,10 @@
 		<!-- <constructor-arg value="perro"></constructor-arg> -->
 
 		<!-- Se puede modificar el orden a mostrar con el index -->
-		<!-- <constructor-arg index="0" value="1"></constructor-arg> <constructor-arg 
-			index="2" value="blanco"></constructor-arg> <constructor-arg index="1" value="perro"></constructor-arg> -->
+		<!-- <constructor-arg index="0" value="1"></constructor-arg>
+			<constructor-arg index="2" value="blanco"></constructor-arg>
+			<constructor-arg index="1" value="perro"></constructor-arg>
+		 -->
 	</bean>
 
 	<bean id="persona" class="com.marcelodev.beans.Persona">

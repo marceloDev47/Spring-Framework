@@ -7,12 +7,13 @@
 	<!-- 
 		"byName" hará la inyección o referencia automática de los beans por nombre 
 		id='' que le indiquemos. 
-		"byType" lo mismo solo que lo hace por tipo de objeto, 
-		hay que tener cuidado con el uso de este, porque si tenemos mas de un bean 
-		del mismo tipo habrá conflictos 
+		"byType" lo mismo solo que lo hace por tipo de objeto.
+		+ Ciclo de vida de los beans - init-method 
+		y destroy-method
 	-->
 	<bean id="persona" class="com.marcelodev.beans.Persona"
-		autowire="byName">
+		autowire="byName" init-method="init"
+		destroy-method="destroy" >
 		<property name="idPersona" value="1"></property>
 		<property name="nombre" value="Carlos"></property>
 

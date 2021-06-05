@@ -10,7 +10,7 @@ public class App5 {
   // Uso de interfaces
   // Se crea la clase Jugador
   // Interfaz IEquipo
-  // 2 clases que implmentan esa interfaz: Barcelona y Juventus
+  // 2 clases que implementan esa interfaz: Barcelona y Juventus
 
   public static void main(String[] args) {
     ApplicationContext appContext =
@@ -21,6 +21,8 @@ public class App5 {
     System.out.println(j.getNombre());
 
     IEquipo equipo = (IEquipo) appContext.getBean("barcelona");
+    // Nos basta con solo cambiar el parámetro getBean e indicarle cual deseamos traer
+    // IEquipo equipo = (IEquipo) appContext.getBean("juventus");
     System.out.println(equipo.mostrar());
 
     ((ConfigurableApplicationContext) appContext).close();

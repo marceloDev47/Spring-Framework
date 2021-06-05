@@ -15,7 +15,8 @@ public class App6 {
     Jugador j = (Jugador) appContext.getBean("messi");
     System.out.println(j.getNumero());
     System.out.println(j.getNombre());
-    System.out.println(j.getEquipo().mostrar());
+    System.out.println(j.getEquipo().mostrar()); // Probar cambiando el valor colocado en la
+                                                 // anotación @Qualifier de la clase Jugador
 
     // IEquipo equipo = (IEquipo) appContext.getBean("juventus");
     // System.out.println(equipo.mostrar());

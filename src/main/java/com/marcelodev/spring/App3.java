@@ -1,6 +1,7 @@
 package com.marcelodev.spring;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.marcelodev.beans.Persona;
 
@@ -15,6 +16,8 @@ public class App3 {
 
     System.out
         .println(p.getNombre() + " " + p.getPais().getNombre() + " " + p.getCiudad().getNombre());
+
+    ((ConfigurableApplicationContext) appContext).close();
   }
 
 }
